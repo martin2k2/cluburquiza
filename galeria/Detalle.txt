@@ -1,0 +1,3 @@
+tamaño de las imagenes
+
+580 ancho * 500 alto
