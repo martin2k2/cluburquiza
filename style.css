@@ -17,7 +17,7 @@
 
 .slider {
     position: relative;
-    width: 40%; 
+    width: 100%; 
     max-width: 800px;
     margin: auto;
     overflow: hidden;
@@ -2844,6 +2844,7 @@ unicode-bidi: isolate;
     }
   }
   
+
 
 
  
