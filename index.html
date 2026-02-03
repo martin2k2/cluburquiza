@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Urquiza</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="icon" type="imagenes/png" href="imagenes/logoinicio.png">
+</head>          
+
+<body>
+   
+    <div id="header" class="">
+     	<div class="header-wrapper">
+			    <div class="logo">
+			        <a href="#Header" title=" ">
+                        <img src="imagenes/URQ4a.png" class="logo" alt="">
+                    </a>
+			    </div>
+            <a id="ingresar_button" href="https://cluburquiza.carnetdigital.com.ar/">Carnet Digital</a>
+        </div>
+
+    </div> 
+    
+<!------------------------------------- MENU  ------------------------------------------->
+
+<header id="Header">
+    <input type="checkbox" id="menu">
+
+    <label for="menu">            <!-- MENU PANEL DE ABEJAS-->
+        <img src="imagenes/MENU2.bmp" class="menu-icono" alt="">
+    </label>
+
+    <ul class="menu">
+        <li><a href="#NOTICIAS" class="item">Noticias</a></li>
+        <br>
+        <li><a href="#ACTIVIDADES" class="item">Actividades</a></li>
+        <br>
+        <li><a href="#GALERIA" class="item">Galeria</a></li>
+        <br>
+        <li><a href="#SOCIO" class="item">Hacete Socio</a></li>
+        <br>
+        <li><a href="#NOSOTROS" class="item">Sobre nosotros</a></li>
+        <br>
+        <li><a href="#AUSPICIANTES" class="item">Auspiciantes</a></li>
+        <br>
+        <li><a href="#mapa" class="item">Combis</a></li>
+        <br>
+        <li><a href="index_tienda.html" class="item">Tienda</a></li>
+        <br>
+        <li><a href="imagenes/SITIO-EN-CONSTRUCCION.jpg" class="item">Cartilla de Beneficios</a></li>
+        <br>
+        <!--<li><a href="https://script.google.com/macros/s/AKfycbyPpClgFrS2nNFKCvAgUeeptl4x_xXraXHlMYAyYUMuiHPnih3CMM4cPi5B3iIolV5O/exec" class="item">Adhesión Débito automático</a></li>-->
+        <li><a href="https://urquizaclub.mipago.coop/companies/1/request-debit" class="item">Adhesión Débito automático</a></li>
+        <br>
+        <li><a href="#Contactanos" class="item">Contacto</a></li>
+        <br>
+    </ul>
+
+</header>
+<!------------------------------------- FIN MENU  ------------------------------------------->
+
+<!-------------------------------  NOTICIAS   boton desplazable  ------------------------->
+<!--<h2>NOTICIAS</h2> 
+<div class="slider">
+  
+   <div class="slider-wrapper">
+
+-->      <!--<img src="eventos/img1.jpg" class="slide-img">-->
+<!--    <img src="eventos/4.jpg" class="slide-img">
+      <img src="eventos/5.jpg" class="slide-img">
+      <img src="eventos/6.jpg" class="slide-img">
+-->    <!--  <img src="eventos/img3.jpg" class="slide-img">-->
+
+    <!--    </div>
+    
+    <button class="nav prev" onclick="prevSlide()"><i class="fas fa-arrow-left"></i></button>
+    <button class="nav next" onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
+  </div>
+  
+  <script>
+    let currentIndex = 0;
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const totalSlides = document.querySelectorAll('.slide-img').length;
+  
+    function updateSlider() {
+      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider();
+    }
+  
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    }
+  </script>
+-->  
+<!-------------------------------------- FIN NOTICIAS ---------------------------------------->
+
+<!---------------------------------------- Noticias deplazables automaticas ------------------------>
+<style>
+    * {box-sizing: border-box;}
+    body {font-family: Verdana, sans-serif;}
+    .mySlides {display: none;}
+    img {vertical-align: middle;}
+    
+    /* Contenedor de presentación de diapositivas */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Texto del título */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Texto numérico (1/3, etc.) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* Los puntos/viñetas/indicadores */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active {
+      background-color: #717171;
+    }
+    
+    /* Animación desvanecida */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    /* En pantallas más pequeñas, reduzca el tamaño del texto*/
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 11px}
+    }
+    </style>
+<br>
+
+<h2>NOTICIAS</h2>
+    <div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="eventos/4.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="eventos/5.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="eventos/6.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // cambia imagen cada 2 segundos 
+    }
+    </script>
+
+<!----------------------------------------Fin Noticias deplazables automaticas ------------------------>
+
+<!---------------------------------------------- EVENTOS 2 --------------------->    
+<!--
+<h2>NOTICIAS</h2> 
+<div id="NOTICIAS">
+    <ul class="slider">
+        <li id="slider1">
+            <img src="eventos/1.jpeg" alt="">
+        </li>
+        <li id="slider2">
+-->           <!-- <img src="eventos/111.jpg" alt="">-->
+ <!--            <img src="eventos/2.jpeg" alt="">
+        </li>
+        <li id="slider3">
+-->           <!-- <img src="eventos/federacion2025.jpeg" alt=""> --> 
+<!--            <img src="eventos/3.jpg" alt="">
+        </li>
+    </ul>
+
+    <ul class="menu_slider">
+        <li>
+            <a href="#slider1">1</a>
+        </li>
+        <li>
+            <a href="#slider2">2</a>
+        </li>
+        <li>
+            <a href="#slider3">3</a>
+        </li>
+    </ul>
+
+</div>
+-->
+<!------------------------------------- FIN EVENTOS 2 ---------------------------->
+
+<!-------------------------------------- ACTIVIDADES ----------------------------->
+<h2>ACTIVIDADES </h2>
+    <section class="actividades-conteiner" id="ACTIVIDADES">
+        
+        <div class="card">
+            <div class="face front">
+                <img src="Actividades/maculino2.jpeg" alt="">
+                <h3>FUTBOL MASCULINO</h3>
+            </div>
+            <div class="face back">
+                <h3></h3>
+                <!--    <a href="https://wa.me/5492236344512?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 6344512 </a>  
+                EMILIANO-->
+                <li><a href="index_Primera_masculino.html" class="item">MAS INFOMACION</a> </li>
+                <h7>
+                    Tucuman 2661 
+                </h7>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face front">
+                <img src="Actividades/futbolfemenino1.png" alt="">
+                <h3>FUTBOL FEMENINO</h3>
+            </div>
+        <div class="face back">
+            <h3>
+
+            </h3>
+             <!--     <a href="https://wa.me/5492613038664?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 261 3038664</a> 
+                    DAMIAN 
+                <a href="https://wa.me/5492235906402?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 5906403</a>  
+                      CLAUDIA -->
+                   <li><a href="index_Primera_femenino.html" class="item">MAS INFOMACION</a> </li>
+                    <h7>
+                        Tucuman 2661 
+                    </h7>
+                   
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/mixto.jpg" alt="">
+            <h3>ESCUELA MIXTA DE FUTBOL</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492236841629?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 6841629 </a>  
+            LUCA
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/gimnasio.jpg" alt="">
+            <h3>GIMNASIO</h3>
+        </div>
+        <div class="face back">
+            <h3>GIMNASIO</h3>
+            <h7>
+                TUCUMAN 2661 
+               
+            </h7>
+        </div>
+    </div>
+
+   <!-- <div class="card">
+        <div class="face front">
+            <img src="Actividades/basquet.jpg" alt="">
+            <h3>BASQUET</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492254536057?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 2254 536057 </a>  
+            GUIDO
+        </div>
+    </div>
+-->
+
+
+     <div class="card">
+        <div class="face front">
+            <img src="Actividades/basquet.jpg" alt="">
+            <h3>BASQUET</h3>
+        </div>
+        <div class="face back">
+            <h3>
+				
+			</h3>
+
+            <li><a href="index_basquet.html" class="item">MAS INFOMACION</a> </li>
+            <h7>
+                Tucuman 2661 
+            </h7>
+            <!--<div class="link">
+                <a href="#">DETALLES</a>
+            </div>-->
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/TAEKWON-DO.jpg" alt="">
+            <h3>TAEKWON-DO</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+            
+                <a href="https://wa.me/5492235857057?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 5857057 </a>  
+               
+            <h7></h7>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/gym-multiple-porpouse.jpg" alt="">
+            <h3>MULTIESPACIO</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492234381018?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 4381018 </a>  
+            <h7>ROSARIO</h7>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/papi.jpg" alt="">
+            <h3>FUTSAL</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492234381018?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 4381018 </a>  
+            <h7>ROSARIO</h7>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/PELOTA PALETA.jpg" alt="">
+            <h3>PELOTA PALETA</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492234464280?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 4464280 </a>  
+                <a href="https://wa.me/5492235606909?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 5606909 </a>  
+        </div>
+        
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/aikido.jpg" alt="">
+            <h3>AIKIDO</h3>
+        </div>
+        <div class="face back">
+            <h3></h3>
+                <a href="https://wa.me/5492236242702?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 6242702</a> 
+         
+            <h7>
+                LEANDRO  
+            </h7>
+           
+        </div>
+    </div>
+    <div class="card">
+        <div class="face front">
+            <img src="Actividades/KARATE YOKUSHIN.jpg" alt="">
+            <h3>KARATE KYOKUSHIN</h3>
+        </div>
+        <div class="face back">
+            <h3>
+				
+			</h3>
+          
+            <a href="https://wa.me/5492236363151?text=Gracias por contactarte con el CLub Atletico General Urquiza">+54 9 223 6363151</a> 
+            <h7>
+                FRANCISCO BADALINI
+            </h7>
+           
+        </div>
+    </div>
+</section>
+<!--------------------------------------- FIN ACTIVIDADES ---------------------------------->
+
+<!------------------------------------ SECCION GALERIA CON ZOOM--------------------------------->
+
+<h2>GALERIA</h2>
+
+    <Section class="FOTOS-CONTENEDOR" id="GALERIA">
+      <!-- <img src="galeria/1.jpg" alt="">  
+        <img src="galeria/2.jpg" alt="">  
+        <img src="galeria/3.jpg" alt="">  
+        <img src="galeria/4.jpg" alt="">  
+        <img src="galeria/5.jpg" alt="">  
+        <img src="galeria/6.jpg" alt="">  --> 
+        <a target="_blank" href="galeria/1.jpg">
+            <img src="galeria/1.jpg" alt="" width="600" height="400">
+        </a>
+        <a target="_blank" href="galeria/2.jpg">
+            <img src="galeria/2.jpg" alt="" width="600" height="400">
+        </a>
+        <a target="_blank" href="galeria/3.jpg">
+            <img src="galeria/3.jpg" alt="" width="600" height="400">
+        </a>
+        <a target="_blank" href="galeria/4.jpg">
+            <img src="galeria/4.jpg" alt="" width="600" height="400">
+        </a>
+        <a target="_blank" href="galeria/5.jpg">
+            <img src="galeria/5.jpg" alt="" width="600" height="400">
+        </a>
+        <a target="_blank" href="galeria/6.jpg">
+            <img src="galeria/6.jpg" alt="" width="600" height="400">
+        </a>
+    </Section>
+
+<!------------------------------------ FIN SECCION GALERIA --------------------------------->    
+
+
+<!---------------------------------------- HACETE SOCIO ------------------------------------->
+
+<section class="socio-contenedor" id="SOCIO">
+    <h6>
+    <!--<a href="https://www.carnetdigital.com.ar/socios/gestion/"> <img src="Socios/asociate.jpeg" alt="HACETE SOCIO"></a> -->
+		<a href="https://cluburquiza.carnetdigital.com.ar/preinscripcion/"> <img src="Socios/asociate.jpeg" alt="HACETE SOCIO"></a> 
+	</h6>
+    <p>¡Tu carnet brinda beneficios!
+ 
+        Mediante convenios con distintos comercios de la ciudad, nuestros socios tienen acceso a descuentos y promociones en una variada cartera de negocios.
+        Presentando tu carnet, ¡accedes automáticamente a disfrutar del beneficio!
+    </p>
+    <BR>
+    <div class="cardclick" style="width: auto;">
+        <div class="card-body">
+            <a href="https://cluburquiza.carnetdigital.com.ar/preinscripcion/" class="btn btn-primary stretched-link">CLICK ACA</a>
+        </div>
+        
+    </div>
+</section>
+<br>
+
+<section>
+    
+    <!---<div class="beneficio-1">
+                <img src="imagenes/interlagos1.jpg" alt="">  
+            <p>
+                 5 % en la carrera
+            </p>
+        </div>-->
+
+
+        <div class="beneficio-2">
+                <img src="imagenes/bowling1.jpg" alt=""> 
+            <p>
+                10 % línea bowling
+            </p>
+        </div>
+</section>
+<br>
+<!----------------------------------- FIN HACETE SOCIO ------------------------------->
+
+<!----------------------------------- SOBRE NOSOTROS ------------------------------->
+
+<h2>SOBRE NOSOTROS</h2>
+
+<section class="general conteiner" ID="NOSOTROS">
+  
+        <div class="general-2">
+           <!--<h4>SOBRE NOSOTROS</h4>-->
+            
+                <img src="imagenes/historia.jpg" alt="">  
+             
+
+                <p>General Urquiza, un símbolo del barrio de la Terminal Vieja, fundado el 11 de setiembre de 1914, cumplió 107 años de riquísima historia.
+                    Nacido como Nacional, cambió a su actual nombre en 1934 por un capricho del gobierno conservador del general Agustín Justo.
+                    Como muchos, nació como club de fútbol. Fundador de la vieja Asociación Marplatense, fue gran protagonista de los primeros años de competencia oficial y conquistó los títulos de 1915, 1925 y 1925.<span id="dots">...</span><span id="more">Más allá de algunos descensos circunstanciales, General Urquiza fue protagonista de los torneos de primera hasta bien ingresada la década del ’60, incluso festejó un nuevo campeonato en 1944 y disputó una recordadísima definición en 1961 mano a mano con Independiente.
+                        Perdió su lugar en primera en 1967 y recién lo recuperó con la unificación de todas las categorías de 1999. De todos modos sus producciones  a partir de entonces fueron in crescendo y festejó un nuevo título en 2014, una última “estrella” para saludar su centenario.
+                        General Urquiza, al mismo tiempo, fue gran protagonista en los primeros años del básquetbol marplatense, llegando a consagrarse campeón del Oficial en 1943 y 1944 y del Preparación en 1941 y 1943, títulos que se sumaron a todos los que había conseguido en la década anterior antes de la fundación de la AMB.
+                        Por esos años también descollaban, representando al club, los ciclistas Humberto Palmieri y Eduardo Primo, la célebre “Pareja del Sur”, como los bautizó El Gráfico.
+                        Seguramente con menos brillo que en aquellos años dorados, General Urquiza siguió luchando por los chicos y el deporte y se erigió como un bastión en la difícil zona del barrio Las Heras, donde funciona su campo de deportes.
+                        Y de sus inferiores salieron dos “cracks” que hoy brillan en Europa y en la Selección Argentina: nada menos que Emiliano “Dibu” Martínez y Lucas Martínez Quarta.
+                        Tiene mucha historia de la que enorgullecerse la familia de General Urquiza. Y, ya con 107 años a cuestas, va por más.</span></p>
+
+
+
+
+
+             <button onclick="myFunction()" id="myBtn">Leer más</button>       
+    <script>
+
+             function myFunction() {
+                var dots = document.getElementById("dots");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn");
+              
+                if (dots.style.display === "none") {
+                  dots.style.display = "inline";
+                  btnText.innerHTML = "Leer más";
+                  moreText.style.display = "none";
+                } else {
+                  dots.style.display = "none";
+                  btnText.innerHTML = "Leer menos";
+                  moreText.style.display = "inline";
+                }
+              }
+    </script>
+            <p></p>          
+        </div> 
+  </section>
+
+<!----------------------------------- FIN SOBRE NOSOTROS ------------------------------->  
+
+<!-------------------------------------- TIENDA CAGU ----------------------------------->
+
+ <section class="tienda">
+    <div class="swiper mySwiper">
+            <!-- <h7>INDUMENTARIA</h7> -->
+            <h2>TIENDA CAGU</h2>
+            <br><br>
+            <div class="swiper-slide1">
+                <!--<img src="imagenes/rompeviento.png" alt="">-->
+                <a href="index_tienda.html"> <img src="img tienda/portada.jpg" alt="rompeviento"></a>
+            </div>        
+    </div>
+</section>
+<br><br>
+<!-------------------------------------- FIN TIENDA CAGU ----------------------------------->
+
+<!---------------------------------------- AUSPICIANTES ------------------------------------>
+
+<h2>NOS APOYAN</h2>
+<section class="AUSPICIANTES" id="AUSPICIANTES">
+    
+        <a href="http://www.uccmardelplata.com"><img src="Auspiciantes/unidad.jpg" alt=""></a>
+        <a href="https://www.mjbj.com.ar/"><img src="Auspiciantes/maderera.jpg" alt=""></a>
+        <a href="http://www.INSTAGRAM.com/bungalows_paraisosdelgualeyan/"><img src="Auspiciantes/cabañas.jpg" alt=""></a>
+        <a href="https://farmaciaspreviley.com.ar/"><img src="Auspiciantes/previley.jpg" alt=""></a>
+        <a href="https://api.whatsapp.com/send/?phone=5492235417256&text&type=phone_number&app_absent=0"><img src="Auspiciantes/lealA.jpg" alt=""></a>
+        <a href="https://imagenesmdq.com/web/"><img src="Auspiciantes/imagenes.jpg" alt=""></a>
+        <a href=""><img src="Auspiciantes/elnido2.jpg" alt=""></a>
+        <a href="https://www.facebook.com/bowlingurqui/"><img src="Auspiciantes/bowling.jpg" alt=""></a>
+        <a href="https://cardioemergenciasmdp.com.ar/"><img src="Auspiciantes/cardio2.jpg" alt=""></a>
+        <a href="https://www.facebook.com/Ginosclubdepizzas/"><img src="Auspiciantes/ginos.jpg" alt=""> </a>
+<!--    <a href="https://www.interlagoskarting.com"><img src="Auspiciantes/interlagos.jpg" alt=""></a>-->
+        <a href=""><img src="Auspiciantes/medilife.jpg" alt=""></a>
+        <a href="https://www.instagram.com/punto.kinesio/?hl=es-la"><img src="Auspiciantes/puntok.jpg" alt=""></a>
+<!--    <a href="https://somosrex.com/"><img src="Auspiciantes/rex.jpg" alt=""></a> -->
+		<a href="https://www.INSTAGRAM.com/granja_tolemarmdp/"><img src="Auspiciantes/tolemar1.jpg" alt=""></a>
+		<a href="https://laserfusion3d.com.ar/"><img src="Auspiciantes/3Dfusion.jpg" alt=""></a>
+<!--	<a href="https://www.instagram.com/carnicosdelsur/?hl=es"><img src="Auspiciantes/carnicos.jpg" alt=""></a>-->
+</section>
+<BR></BR>
+<!------------------------------------------ FIN AUSPICIANTES ------------------------------------------>
+
+<!----------------------------------------- RECORRIDO COMBIS ------------------------------------------->
+
+<section>
+    <h2>Recorrido de las combis</h2>
+    <section class="mapa" id="mapa">
+       <iframe src="https://www.google.com/maps/d/embed?mid=1aVS1BkpZH1GjcXpassBcuBNBAHgJCyc&ehbc=2E312F" width="640" height="480"></iframe>
+    </section>
+</section>
+<!----------------------------------------- FIN RECORRIDO COMBIS ------------------------------------------->
+
+<!-------------------------------------------- CONTACTANOS --------------------------------------------->
+<section>
+    <!--<h2>Contactanos</h2>-->
+    <h2>Contactanos</h2>
+    <div class="container-form" id="Contactanos">
+        <div class="info-form">
+            <!--<h2>Contáctanos</h2>-->
+            <p>Secretaria del Club,  Lunes a Viernes de  17:00 a 21:00 Hs</p>
+            <a href="#"><i class="fa fa-phone"></i> +549 223 3489999</a>
+            <a href="#"><i class="fa fa-envelope"></i> urquizaclub@gmail.com.ar</a>
+            <a href="#"><i class="fa fa-map-marked"></i> TUCUMAN 2671, Bs As, Mdp</a>
+ 
+        </div>
+        <form action="https://formsubmit.co/urquizaclub@gmail.com" method="POST" autocomplete="off">
+            <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
+            <input type="emal" name="email" placeholder="Tu Email" class="campo">
+            <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
+            <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+        </form>
+    </div>
+</section>
+<!-----------------------------------------FIN CONTACTANOS ------------------------------------------->
+
+<!-------------------------------------- REDES SOCIALES FLOTANTE ------------------------------------->
+
+    <div class="container-redes">
+        <input type="checkbox" id="btn-mas">
+            <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=100087450889819" class="fa-brands fa-facebook fa-lg"></a>
+                <a href=" https://www.instagram.com/urquimdp/" class="fa-brands fa-instagram  fa-lg"></a>
+                <a href="https://www.youtube.com/@ClubUrquizaMDP" class="fa-brands fa-youtube  fa-lg"></a>
+                <a href="https://wa.me/5492233489999?text=Gracias por contactarte con el CLub Atletico General Urquiza" target =" _blank" class="fa-brands fa-whatsapp"></a>
+            </div>
+
+            <div class="btn-mas">
+                <label for="btn-mas" class="fa-solid fa-comments"></label>
+            </div>
+    </div>
+<!-------------------------------------- FIN REDES SOCIALES FLOTANTE ---------------------------------->
+
+<!-------------------------------------------- BOTON INICIO ------------------------------------------->
+ 
+  <section class="inicio"> 
+        <div class="boton-arriba">
+            <a href="#Header"> <img class="botoninicio" src="imagenes/casa2.png" alt=""></a>
+        </div>
+  </section>
+<!------------------------------------------ FIN BOTON INICIO ----------------------------------------->  
+
+</body>
+
+        <footer class="footer-simple">
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </footer>
+
+</html>
